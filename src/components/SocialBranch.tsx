@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Paper, List, ListItem, ListItemText, Chip, Divider } from '@mui/material';
+import { Typography, Paper, List, ListItem, ListItemText, Chip, Divider } from '@mui/material';
 import { Achievement } from '../types/types';
 
 const socialAchievements: Achievement[] = [
