@@ -14,14 +14,14 @@ const skillAchievements: Achievement[] = [
   {
     id: 'first_par',
     title: 'First Par',
-    description: 'Score your first par on a hole',
+    description: 'Card your first par on a hole',
     isUnlocked: false,
     patchAvailable: true
   },
   {
     id: 'first_birdie',
     title: 'First Birdie',
-    description: 'Score your first birdie',
+    description: 'Card your first birdie',
     isUnlocked: false,
     patchAvailable: true
   },
