@@ -1,3 +1,25 @@
+# Disc Golf Skill Tree
+
+A skill tree application for disc golf players to track their achievements and progress.
+
+## Features
+
+- Skill Branch: Track your throwing skills and milestones
+- Collection Branch: Monitor your disc collection and equipment
+- Social Branch: Follow your community engagement and social achievements
+
+## Development
+
+This project is built with:
+- React
+- TypeScript
+- Material-UI
+- Vite
+
+## Deployment
+
+The application is deployed using GitHub Pages and GitHub Actions.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
