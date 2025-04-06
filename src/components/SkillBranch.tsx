@@ -32,6 +32,41 @@ const skillAchievements: Achievement[] = [
     isUnlocked: false,
     patchAvailable: true
   },
+  {
+    id: 'first_bogey',
+    title: 'First Bogey',
+    description: 'Card your first bogey (a rite of passage!)',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_round_under_par',
+    title: 'First Round Under Par',
+    description: 'Complete a round under par',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'consistency',
+    title: 'Consistency',
+    description: 'Card the same score on 3 consecutive holes',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'recovery',
+    title: 'Recovery',
+    description: 'Save par after a bad drive',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'fairway_finder',
+    title: 'Fairway Finder',
+    description: 'Land 5 drives in a row on the fairway',
+    isUnlocked: false,
+    patchAvailable: true
+  },
 
   // Putting Mastery
   {
@@ -62,63 +97,31 @@ const skillAchievements: Achievement[] = [
     isUnlocked: false,
     patchAvailable: true
   },
-
-  // Approach Game
   {
-    id: 'approach_ace',
-    title: 'Approach Ace',
-    description: 'Hit an ace on a hole under 200 feet',
+    id: 'pressure_putt',
+    title: 'Pressure Putt',
+    description: 'Make a putt to save par or birdie from Circle 2',
     isUnlocked: false,
     patchAvailable: true
   },
   {
-    id: 'approach_master',
-    title: 'Approach Master',
-    description: 'Land 3 approach shots within 10 feet of the basket',
+    id: 'combo_master',
+    title: 'Combo Master',
+    description: 'Make a birdie putt after a great drive',
     isUnlocked: false,
     patchAvailable: true
   },
   {
-    id: 'scramble_save',
-    title: 'Scramble Save',
-    description: 'Save par from a difficult position off the fairway',
+    id: 'putting_practice',
+    title: 'Putting Practice',
+    description: 'Practice putting for 30 minutes straight',
     isUnlocked: false,
     patchAvailable: true
   },
   {
-    id: 'touch_master',
-    title: 'Touch Master',
-    description: 'Execute a perfect touch shot under 100 feet',
-    isUnlocked: false,
-    patchAvailable: true
-  },
-
-  // Driving Skills
-  {
-    id: 'straight_shooter',
-    title: 'Straight Shooter',
-    description: 'Throw a drive that lands within 10 feet of the center line',
-    isUnlocked: false,
-    patchAvailable: true
-  },
-  {
-    id: 'hyzer_master',
-    title: 'Hyzer Master',
-    description: 'Execute a perfect hyzer shot that lands exactly where intended',
-    isUnlocked: false,
-    patchAvailable: true
-  },
-  {
-    id: 'anhyzer_artist',
-    title: 'Anhyzer Artist',
-    description: 'Execute a perfect anhyzer shot that lands exactly where intended',
-    isUnlocked: false,
-    patchAvailable: true
-  },
-  {
-    id: 'power_drive',
-    title: 'Power Drive',
-    description: 'Drive over 350 feet with accuracy',
+    id: 'wind_warrior',
+    title: 'Wind Warrior',
+    description: 'Make a putt in strong wind conditions',
     isUnlocked: false,
     patchAvailable: true
   },
@@ -149,6 +152,41 @@ const skillAchievements: Achievement[] = [
     id: 'first_tomahawk',
     title: 'First Tomahawk',
     description: 'Successfully execute your first tomahawk shot',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'shot_shaper',
+    title: 'Shot Shaper',
+    description: 'Successfully execute all shot shapes (hyzer, flat, anhyzer, roller)',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'forehand_distance',
+    title: 'Forehand Distance',
+    description: 'Throw 250 feet forehand',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'backhand_distance',
+    title: 'Backhand Distance',
+    description: 'Throw 350 feet backhand',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'putting_under_pressure',
+    title: 'Putting Under Pressure',
+    description: 'Make 3 pressure putts in one round',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'scramble_master',
+    title: 'Scramble Master',
+    description: 'Save par from an out-of-bounds situation',
     isUnlocked: false,
     patchAvailable: true
   },
@@ -204,6 +242,43 @@ const skillAchievements: Achievement[] = [
     description: 'Get an ace on a blind hole',
     isUnlocked: false,
     patchAvailable: true
+  },
+
+  // Professional Level
+  {
+    id: 'ace_race',
+    title: 'Ace Race',
+    description: 'Hit 3 aces in one month',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'tournament_winner',
+    title: 'Tournament Winner',
+    description: 'Win a local tournament',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'perfect_round',
+    title: 'Perfect Round',
+    description: 'Complete a round without a single mistake',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'course_record',
+    title: 'Course Record',
+    description: 'Set a new course record',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'pro_qualifier',
+    title: 'Pro Qualifier',
+    description: 'Qualify for a professional tournament',
+    isUnlocked: false,
+    patchAvailable: true
   }
 ];
 
@@ -226,7 +301,7 @@ const SkillBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Basic Skills
         </Typography>
-        {skillAchievements.slice(0, 4).map((achievement) => (
+        {skillAchievements.slice(0, 9).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -258,71 +333,7 @@ const SkillBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Putting Mastery
         </Typography>
-        {skillAchievements.slice(4, 8).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
-
-        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
-
-        {/* Approach Game Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Approach Game
-        </Typography>
-        {skillAchievements.slice(8, 12).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
-
-        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
-
-        {/* Driving Skills Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Driving Skills
-        </Typography>
-        {skillAchievements.slice(12, 16).map((achievement) => (
+        {skillAchievements.slice(9, 17).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -354,7 +365,7 @@ const SkillBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Advanced Techniques
         </Typography>
-        {skillAchievements.slice(16, 20).map((achievement) => (
+        {skillAchievements.slice(17, 26).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -386,7 +397,7 @@ const SkillBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Distance Milestones
         </Typography>
-        {skillAchievements.slice(20, 24).map((achievement) => (
+        {skillAchievements.slice(26, 30).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -418,7 +429,39 @@ const SkillBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Fun Skill Achievements
         </Typography>
-        {skillAchievements.slice(24).map((achievement) => (
+        {skillAchievements.slice(30, 33).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Professional Level Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Professional Level
+        </Typography>
+        {skillAchievements.slice(33, 38).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{

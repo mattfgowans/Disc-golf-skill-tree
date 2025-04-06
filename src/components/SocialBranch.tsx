@@ -151,6 +151,73 @@ const socialAchievements: Achievement[] = [
     description: 'Host a disc golf gathering with friends',
     isUnlocked: false,
     patchAvailable: true
+  },
+
+  // Leadership
+  {
+    id: 'first_tournament_director',
+    title: 'First Tournament Director',
+    description: 'Direct a tournament',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_league_organizer',
+    title: 'First League Organizer',
+    description: 'Organize a league',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_clinic_instructor',
+    title: 'First Clinic Instructor',
+    description: 'Instruct at a clinic',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_course_designer',
+    title: 'First Course Designer',
+    description: 'Help design a disc golf course',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+
+  // Professional Social
+  {
+    id: 'first_pro_meeting',
+    title: 'First Pro Meeting',
+    description: 'Meet a professional disc golfer',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_pro_clinic',
+    title: 'First Pro Clinic',
+    description: 'Attend a pro clinic',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_pro_tournament',
+    title: 'First Pro Tournament',
+    description: 'Play in a professional tournament',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_pro_sponsorship',
+    title: 'First Pro Sponsorship',
+    description: 'Receive a sponsorship',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_pro_media',
+    title: 'First Pro Media',
+    description: 'Appear in disc golf media',
+    isUnlocked: false,
+    patchAvailable: true
   }
 ];
 
@@ -301,7 +368,71 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Fun Social Achievements
         </Typography>
-        {socialAchievements.slice(16).map((achievement) => (
+        {socialAchievements.slice(16, 20).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Leadership Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Leadership
+        </Typography>
+        {socialAchievements.slice(20, 24).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Professional Social Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Professional Social
+        </Typography>
+        {socialAchievements.slice(24).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{

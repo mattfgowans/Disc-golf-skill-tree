@@ -39,6 +39,13 @@ const collectionAchievements: Achievement[] = [
     isUnlocked: false,
     patchAvailable: true
   },
+  {
+    id: 'first_marker',
+    title: 'First Marker',
+    description: 'Get your first mini marker',
+    isUnlocked: false,
+    patchAvailable: true
+  },
 
   // Bag Progression
   {
@@ -99,33 +106,38 @@ const collectionAchievements: Achievement[] = [
     isUnlocked: false,
     patchAvailable: true
   },
-
-  // Disc Types
   {
-    id: 'putter_collector',
-    title: 'Putter Collector',
-    description: 'Own 5 different putters',
+    id: 'brand_loyalist',
+    title: 'Brand Loyalist',
+    description: 'Own discs from 3 different manufacturers',
     isUnlocked: false,
     patchAvailable: true
   },
   {
-    id: 'putter_commitment_issues',
-    title: 'Putter Commitment Issues',
-    description: 'Own 10 different putters',
+    id: 'plastic_explorer',
+    title: 'Plastic Explorer',
+    description: 'Try discs in 3 different plastic types',
     isUnlocked: false,
     patchAvailable: true
   },
   {
-    id: 'midrange_master',
-    title: 'Midrange Master',
-    description: 'Own 5 different midrange discs',
+    id: 'weight_variety',
+    title: 'Weight Variety',
+    description: 'Own discs ranging from 150g to 175g',
     isUnlocked: false,
     patchAvailable: true
   },
   {
-    id: 'driver_diversity',
-    title: 'Driver Diversity',
-    description: 'Own 10 different drivers',
+    id: 'first_limited_edition',
+    title: 'First Limited Edition',
+    description: 'Purchase a limited edition disc',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_tour_series',
+    title: 'First Tour Series',
+    description: 'Purchase a tour series disc',
     isUnlocked: false,
     patchAvailable: true
   },
@@ -156,6 +168,27 @@ const collectionAchievements: Achievement[] = [
     id: 'custom_stamp',
     title: 'Custom Stamp',
     description: 'Get a disc with a custom stamp',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_tourney_disc',
+    title: 'First Tourney Disc',
+    description: 'Get a disc from a tournament',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_signature_disc',
+    title: 'First Signature Disc',
+    description: 'Get a disc signed by a pro',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'first_custom_disc',
+    title: 'First Custom Disc',
+    description: 'Design your own custom disc',
     isUnlocked: false,
     patchAvailable: true
   },
@@ -233,7 +266,7 @@ const CollectionBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Basic Equipment
         </Typography>
-        {collectionAchievements.slice(0, 5).map((achievement) => (
+        {collectionAchievements.slice(0, 6).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -265,7 +298,7 @@ const CollectionBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Bag Progression
         </Typography>
-        {collectionAchievements.slice(5, 9).map((achievement) => (
+        {collectionAchievements.slice(6, 10).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -297,39 +330,7 @@ const CollectionBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Disc Collection
         </Typography>
-        {collectionAchievements.slice(9, 13).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
-
-        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
-
-        {/* Disc Types Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Disc Types
-        </Typography>
-        {collectionAchievements.slice(13, 17).map((achievement) => (
+        {collectionAchievements.slice(10, 19).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -361,7 +362,7 @@ const CollectionBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Customization
         </Typography>
-        {collectionAchievements.slice(17, 21).map((achievement) => (
+        {collectionAchievements.slice(19, 26).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -393,7 +394,7 @@ const CollectionBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Accessories
         </Typography>
-        {collectionAchievements.slice(21, 25).map((achievement) => (
+        {collectionAchievements.slice(26, 30).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -425,7 +426,7 @@ const CollectionBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Fun Collection Achievements
         </Typography>
-        {collectionAchievements.slice(25).map((achievement) => (
+        {collectionAchievements.slice(30).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
