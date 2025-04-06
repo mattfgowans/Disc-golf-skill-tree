@@ -30,16 +30,19 @@ jobs:
         env:
           CI: false
 
-      - name: List build output
-        run: ls -la dist
+      - name: Debug Build Output
+        run: |
+          echo "=== Build Output Contents ==="
+          ls -la dist
+          echo "=== index.html Contents ==="
+          cat dist/index.html
+          echo "=== Creating .nojekyll file ==="
+          touch dist/.nojekyll
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          folder: dist
-          branch: gh-pages
-          clean: true
-          clean-exclude: |
-            .nojekyll
-            CNAME
-            .github
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          commit_message: "Deploy to GitHub Pages"
