@@ -30,9 +30,16 @@ jobs:
         env:
           CI: false
 
+      - name: List build output
+        run: ls -la dist
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
           clean: true
+          clean-exclude: |
+            .nojekyll
+            CNAME
+            .github
