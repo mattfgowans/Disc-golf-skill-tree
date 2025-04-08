@@ -285,6 +285,7 @@ const SocialBranch: React.FC = () => {
       elevation={3} 
       sx={{ 
         p: 2, 
+        width: '100%',
         bgcolor: 'green',
         color: 'white'
       }}
