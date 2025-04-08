@@ -24,15 +24,15 @@ const SkillTree: React.FC = () => {
           flexDirection: { xs: 'column', md: 'row' },
           gap: 4,
           width: '100%',
-          justifyContent: 'space-between'
+          justifyContent: 'space-evenly'
         }}>
-          <Box sx={{ width: '33.33%', minWidth: 0 }}>
+          <Box sx={{ width: '30%', minWidth: 0 }}>
             <SkillBranch />
           </Box>
-          <Box sx={{ width: '33.33%', minWidth: 0 }}>
+          <Box sx={{ width: '30%', minWidth: 0 }}>
             <SocialBranch />
           </Box>
-          <Box sx={{ width: '33.33%', minWidth: 0 }}>
+          <Box sx={{ width: '30%', minWidth: 0 }}>
             <CollectionBranch />
           </Box>
         </Box>
