@@ -351,7 +351,7 @@ const SocialBranch: React.FC = () => {
         {/* Social Media Section */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-white/90">Social Media</h3>
-          {socialAchievements.slice(13, 19).map((achievement) => (
+          {socialAchievements.slice(13, 17).map((achievement) => (
             <Card key={achievement.id} className="bg-black/10 border-white/20">
               <CardContent className="flex items-center justify-between p-4">
                 <div>
@@ -371,7 +371,7 @@ const SocialBranch: React.FC = () => {
         {/* Fun Social Achievements Section */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-white/90">Fun Social Achievements</h3>
-          {socialAchievements.slice(19, 23).map((achievement) => (
+          {socialAchievements.slice(17, 20).map((achievement) => (
             <Card key={achievement.id} className="bg-black/10 border-white/20">
               <CardContent className="flex items-center justify-between p-4">
                 <div>
@@ -391,7 +391,7 @@ const SocialBranch: React.FC = () => {
         {/* Course Explorer Section */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-white/90">Course Explorer</h3>
-          {socialAchievements.slice(23, 28).map((achievement) => (
+          {socialAchievements.slice(20, 25).map((achievement) => (
             <Card key={achievement.id} className="bg-black/10 border-white/20">
               <CardContent className="flex items-center justify-between p-4">
                 <div>
@@ -411,7 +411,7 @@ const SocialBranch: React.FC = () => {
         {/* Leadership Section */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-white/90">Leadership</h3>
-          {socialAchievements.slice(28, 32).map((achievement) => (
+          {socialAchievements.slice(25, 29).map((achievement) => (
             <Card key={achievement.id} className="bg-black/10 border-white/20">
               <CardContent className="flex items-center justify-between p-4">
                 <div>
@@ -431,7 +431,7 @@ const SocialBranch: React.FC = () => {
         {/* Professional Social Section */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-white/90">Professional Social</h3>
-          {socialAchievements.slice(32).map((achievement) => (
+          {socialAchievements.slice(29).map((achievement) => (
             <Card key={achievement.id} className="bg-black/10 border-white/20">
               <CardContent className="flex items-center justify-between p-4">
                 <div>
