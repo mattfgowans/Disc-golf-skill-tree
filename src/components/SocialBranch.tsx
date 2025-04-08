@@ -284,7 +284,7 @@ const SocialBranch: React.FC = () => {
     <Paper 
       elevation={3} 
       sx={{ 
-        p: 2, 
+        p: 3, 
         width: '100%',
         bgcolor: 'green',
         color: 'white'
