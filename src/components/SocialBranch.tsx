@@ -281,26 +281,270 @@ const socialAchievements: Achievement[] = [
 
 const SocialBranch: React.FC = () => {
   return (
-    <Paper elevation={3} sx={{ p: 2, bgcolor: 'background.paper' }}>
-      <Typography variant="h5" gutterBottom>
+    <Paper 
+      elevation={3} 
+      sx={{ 
+        p: 2, 
+        bgcolor: 'rgba(0,0,0,0.2)',
+        color: 'white'
+      }}
+    >
+      <Typography variant="h5" gutterBottom sx={{ color: 'rgba(255,255,255,0.9)' }}>
         Social Branch
       </Typography>
       <List>
-        {socialAchievements.map((achievement, index) => (
-          <React.Fragment key={achievement.id}>
-            <ListItem>
-              <ListItemText
-                primary={achievement.title}
-                secondary={achievement.description}
-              />
-              <Chip
-                label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-                color={achievement.isUnlocked ? "success" : "default"}
-                size="small"
-              />
-            </ListItem>
-            {index < socialAchievements.length - 1 && <Divider />}
-          </React.Fragment>
+        {/* Community Engagement Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Community Engagement
+        </Typography>
+        {socialAchievements.slice(0, 5).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Social Connections Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Social Connections
+        </Typography>
+        {socialAchievements.slice(5, 9).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Competition Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Competition
+        </Typography>
+        {socialAchievements.slice(9, 13).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Social Media Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Social Media
+        </Typography>
+        {socialAchievements.slice(13, 17).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Fun Social Achievements Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Fun Social Achievements
+        </Typography>
+        {socialAchievements.slice(17, 20).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Course Explorer Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Course Explorer
+        </Typography>
+        {socialAchievements.slice(20, 25).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Leadership Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Leadership
+        </Typography>
+        {socialAchievements.slice(25, 29).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Professional Social Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Professional Social
+        </Typography>
+        {socialAchievements.slice(29).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
         ))}
       </List>
     </Paper>
