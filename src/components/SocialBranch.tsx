@@ -32,6 +32,13 @@ const socialAchievements: Achievement[] = [
     isUnlocked: false,
     patchAvailable: true
   },
+  {
+    id: 'pdga_member',
+    title: 'PDGA Member',
+    description: 'Purchase a PDGA membership and receive your player number',
+    isUnlocked: false,
+    patchAvailable: true
+  },
 
   // Social Connections
   {
@@ -240,7 +247,7 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Community Engagement
         </Typography>
-        {socialAchievements.slice(0, 4).map((achievement) => (
+        {socialAchievements.slice(0, 5).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
