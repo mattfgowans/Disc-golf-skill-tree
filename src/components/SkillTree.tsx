@@ -22,9 +22,9 @@ const SkillTree: React.FC = () => {
         <Box sx={{
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
-          gap: 4,
           width: '100%',
-          justifyContent: 'space-evenly'
+          justifyContent: 'center',
+          gap: 6
         }}>
           <Box sx={{ width: '30%', minWidth: 0 }}>
             <SkillBranch />
