@@ -173,30 +173,39 @@ const socialAchievements: Achievement[] = [
     isUnlocked: false,
     patchAvailable: true
   },
+
+  // Course Explorer
   {
     id: 'course_explorer_5',
-    title: 'Course Explorer (5)',
+    title: 'Local Legend',
     description: 'Play at 5 unique courses',
     isUnlocked: false,
     patchAvailable: true
   },
   {
     id: 'course_explorer_10',
-    title: 'Course Explorer (10)',
+    title: 'Regional Explorer',
     description: 'Play at 10 unique courses',
     isUnlocked: false,
     patchAvailable: true
   },
   {
     id: 'course_explorer_25',
-    title: 'Course Explorer (25)',
+    title: 'State Champion',
     description: 'Play at 25 unique courses',
     isUnlocked: false,
     patchAvailable: true
   },
   {
+    id: 'course_explorer_50',
+    title: 'Multi-State Master',
+    description: 'Play at 50 unique courses',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
     id: 'course_explorer_100',
-    title: 'Course Explorer (100+)',
+    title: 'Disc Golf Nomad',
     description: 'Play at 100+ unique courses',
     isUnlocked: false,
     patchAvailable: true
@@ -417,7 +426,39 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Fun Social Achievements
         </Typography>
-        {socialAchievements.slice(17, 24).map((achievement) => (
+        {socialAchievements.slice(17, 20).map((achievement) => (
+          <ListItem 
+            key={achievement.id}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 1,
+              mb: 1,
+              backgroundColor: 'rgba(0,0,0,0.1)'
+            }}
+          >
+            <ListItemText
+              primary={achievement.title}
+              secondary={
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {achievement.description}
+                </Typography>
+              }
+            />
+            <Chip 
+              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
+              color={achievement.isUnlocked ? "success" : "default"}
+              sx={{ ml: 2 }}
+            />
+          </ListItem>
+        ))}
+
+        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+
+        {/* Course Explorer Section */}
+        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
+          Course Explorer
+        </Typography>
+        {socialAchievements.slice(20, 25).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -449,7 +490,7 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Leadership
         </Typography>
-        {socialAchievements.slice(24, 28).map((achievement) => (
+        {socialAchievements.slice(25, 29).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -481,7 +522,7 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Professional Social
         </Typography>
-        {socialAchievements.slice(28).map((achievement) => (
+        {socialAchievements.slice(29).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
