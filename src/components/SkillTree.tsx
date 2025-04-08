@@ -26,9 +26,15 @@ const SkillTree: React.FC = () => {
           width: '100%',
           justifyContent: 'space-between'
         }}>
-          <SkillBranch />
-          <SocialBranch />
-          <CollectionBranch />
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <SkillBranch />
+          </Box>
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <SocialBranch />
+          </Box>
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <CollectionBranch />
+          </Box>
         </Box>
       </Box>
     </Container>
