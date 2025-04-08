@@ -1,37 +1,29 @@
 import React from 'react';
-import { Box, Typography, Container } from '@mui/material';
 import SkillBranch from './SkillBranch';
 import SocialBranch from './SocialBranch';
 import CollectionBranch from './CollectionBranch';
 
 const SkillTree: React.FC = () => {
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ 
-        minHeight: '100vh',
-        py: 4,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: 4
-      }}>
-        <Typography variant="h3" component="h1" gutterBottom>
+    <div className="container mx-auto px-4 py-8">
+      <div className="min-h-screen flex flex-col items-center gap-8">
+        <h1 className="text-4xl font-bold">
           Disc Golf Skill Tree
-        </Typography>
+        </h1>
         
-        <Box sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
-          gap: 4,
-          width: '100%',
-          justifyContent: 'space-between'
-        }}>
-          <SkillBranch />
-          <SocialBranch />
-          <CollectionBranch />
-        </Box>
-      </Box>
-    </Container>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          <div className="w-full">
+            <SkillBranch />
+          </div>
+          <div className="w-full">
+            <SocialBranch />
+          </div>
+          <div className="w-full">
+            <CollectionBranch />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
