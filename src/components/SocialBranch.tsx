@@ -129,6 +129,20 @@ const socialAchievements: Achievement[] = [
     isUnlocked: false,
     patchAvailable: true
   },
+  {
+    id: 'pro_tour_fan',
+    title: 'Pro Tour Fan',
+    description: 'Start watching day-later content of the pro tour on Jomez Pro or other channels',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'live_coverage_fan',
+    title: 'Live Coverage Fan',
+    description: 'Purchase a DGN subscription to watch live pro tour coverage',
+    isUnlocked: false,
+    patchAvailable: true
+  },
 
   // Fun Social Achievements
   {
@@ -156,6 +170,34 @@ const socialAchievements: Achievement[] = [
     id: 'disc_golf_party',
     title: 'Disc Golf Party',
     description: 'Host a disc golf gathering with friends',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'course_explorer_5',
+    title: 'Course Explorer (5)',
+    description: 'Play at 5 unique courses',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'course_explorer_10',
+    title: 'Course Explorer (10)',
+    description: 'Play at 10 unique courses',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'course_explorer_25',
+    title: 'Course Explorer (25)',
+    description: 'Play at 25 unique courses',
+    isUnlocked: false,
+    patchAvailable: true
+  },
+  {
+    id: 'course_explorer_100',
+    title: 'Course Explorer (100+)',
+    description: 'Play at 100+ unique courses',
     isUnlocked: false,
     patchAvailable: true
   },
@@ -343,7 +385,7 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Social Media
         </Typography>
-        {socialAchievements.slice(12, 16).map((achievement) => (
+        {socialAchievements.slice(12, 17).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -375,7 +417,7 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Fun Social Achievements
         </Typography>
-        {socialAchievements.slice(16, 20).map((achievement) => (
+        {socialAchievements.slice(17, 24).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -407,7 +449,7 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Leadership
         </Typography>
-        {socialAchievements.slice(20, 24).map((achievement) => (
+        {socialAchievements.slice(24, 28).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
@@ -439,7 +481,7 @@ const SocialBranch: React.FC = () => {
         <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
           Professional Social
         </Typography>
-        {socialAchievements.slice(24).map((achievement) => (
+        {socialAchievements.slice(28).map((achievement) => (
           <ListItem 
             key={achievement.id}
             sx={{
