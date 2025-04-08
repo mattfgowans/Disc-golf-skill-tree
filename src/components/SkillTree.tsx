@@ -29,10 +29,10 @@ const SkillTree: React.FC = () => {
           <Box sx={{ width: '30%', minWidth: 0, flex: 1, position: 'relative', zIndex: 3 }}>
             <SkillBranch />
           </Box>
-          <Box sx={{ width: '30%', minWidth: 0, flex: 1, position: 'relative', zIndex: 1 }}>
+          <Box sx={{ width: '30%', minWidth: 0, flex: 1, position: 'relative', zIndex: 2 }}>
             <SocialBranch />
           </Box>
-          <Box sx={{ width: '30%', minWidth: 0, flex: 1, position: 'relative', zIndex: 2 }}>
+          <Box sx={{ width: '30%', minWidth: 0, flex: 1, position: 'relative', zIndex: 1 }}>
             <CollectionBranch />
           </Box>
         </Box>
