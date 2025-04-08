@@ -1,6 +1,8 @@
 import React from 'react';
-import { Typography, Paper, List, ListItem, ListItemText, Chip, Divider } from '@mui/material';
 import { Achievement } from '../types/types';
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
 
 const collectionAchievements: Achievement[] = [
   // Basic Equipment
@@ -249,210 +251,130 @@ const collectionAchievements: Achievement[] = [
 
 const CollectionBranch: React.FC = () => {
   return (
-    <Paper 
-      elevation={3} 
-      sx={{ 
-        p: 3, 
-        width: '100%',
-        backgroundColor: '#ED6C02',
-        color: 'white'
-      }}
-    >
-      <Typography variant="h5" gutterBottom>
-        Collection Branch
-      </Typography>
-      <List>
+    <Card className="w-full bg-purple-600 text-white">
+      <CardHeader>
+        <CardTitle>Collection Branch</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-6">
         {/* Basic Equipment Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Basic Equipment
-        </Typography>
-        {collectionAchievements.slice(0, 6).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-white/90">Basic Equipment</h3>
+          {collectionAchievements.slice(0, 6).map((achievement) => (
+            <Card key={achievement.id} className="bg-black/10 border-white/20">
+              <CardContent className="flex items-center justify-between p-4">
+                <div>
+                  <h4 className="font-medium">{achievement.title}</h4>
+                  <p className="text-sm text-white/70">{achievement.description}</p>
+                </div>
+                <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
+                  {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                </Badge>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+        <Separator className="bg-white/20" />
 
         {/* Bag Progression Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Bag Progression
-        </Typography>
-        {collectionAchievements.slice(6, 10).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-white/90">Bag Progression</h3>
+          {collectionAchievements.slice(6, 10).map((achievement) => (
+            <Card key={achievement.id} className="bg-black/10 border-white/20">
+              <CardContent className="flex items-center justify-between p-4">
+                <div>
+                  <h4 className="font-medium">{achievement.title}</h4>
+                  <p className="text-sm text-white/70">{achievement.description}</p>
+                </div>
+                <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
+                  {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                </Badge>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+        <Separator className="bg-white/20" />
 
         {/* Disc Collection Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Disc Collection
-        </Typography>
-        {collectionAchievements.slice(10, 19).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-white/90">Disc Collection</h3>
+          {collectionAchievements.slice(10, 19).map((achievement) => (
+            <Card key={achievement.id} className="bg-black/10 border-white/20">
+              <CardContent className="flex items-center justify-between p-4">
+                <div>
+                  <h4 className="font-medium">{achievement.title}</h4>
+                  <p className="text-sm text-white/70">{achievement.description}</p>
+                </div>
+                <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
+                  {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                </Badge>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+        <Separator className="bg-white/20" />
 
         {/* Customization Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Customization
-        </Typography>
-        {collectionAchievements.slice(19, 26).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-white/90">Customization</h3>
+          {collectionAchievements.slice(19, 26).map((achievement) => (
+            <Card key={achievement.id} className="bg-black/10 border-white/20">
+              <CardContent className="flex items-center justify-between p-4">
+                <div>
+                  <h4 className="font-medium">{achievement.title}</h4>
+                  <p className="text-sm text-white/70">{achievement.description}</p>
+                </div>
+                <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
+                  {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                </Badge>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+        <Separator className="bg-white/20" />
 
         {/* Accessories Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Accessories
-        </Typography>
-        {collectionAchievements.slice(26, 30).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-white/90">Accessories</h3>
+          {collectionAchievements.slice(26, 30).map((achievement) => (
+            <Card key={achievement.id} className="bg-black/10 border-white/20">
+              <CardContent className="flex items-center justify-between p-4">
+                <div>
+                  <h4 className="font-medium">{achievement.title}</h4>
+                  <p className="text-sm text-white/70">{achievement.description}</p>
+                </div>
+                <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
+                  {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                </Badge>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+        <Separator className="bg-white/20" />
 
         {/* Fun Collection Achievements Section */}
-        <Typography variant="h6" sx={{ mt: 2, mb: 1, color: 'rgba(255,255,255,0.9)' }}>
-          Fun Collection Achievements
-        </Typography>
-        {collectionAchievements.slice(30).map((achievement) => (
-          <ListItem 
-            key={achievement.id}
-            sx={{
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 1,
-              mb: 1,
-              backgroundColor: 'rgba(0,0,0,0.1)'
-            }}
-          >
-            <ListItemText
-              primary={achievement.title}
-              secondary={
-                <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {achievement.description}
-                </Typography>
-              }
-            />
-            <Chip 
-              label={achievement.isUnlocked ? "Unlocked" : "Locked"}
-              color={achievement.isUnlocked ? "success" : "default"}
-              sx={{ ml: 2 }}
-            />
-          </ListItem>
-        ))}
-      </List>
-    </Paper>
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-white/90">Fun Collection Achievements</h3>
+          {collectionAchievements.slice(30).map((achievement) => (
+            <Card key={achievement.id} className="bg-black/10 border-white/20">
+              <CardContent className="flex items-center justify-between p-4">
+                <div>
+                  <h4 className="font-medium">{achievement.title}</h4>
+                  <p className="text-sm text-white/70">{achievement.description}</p>
+                </div>
+                <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
+                  {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                </Badge>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
