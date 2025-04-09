@@ -11,24 +11,25 @@ const AuthForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
   const { signIn, signUp } = useAuth();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
-    setLoading(true);
-
     try {
-      if (isSignUp) {
-        await signUp(email, password);
-      } else {
-        await signIn(email, password);
-      }
+      await signUp(email, password);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
-    } finally {
-      setLoading(false);
+      setError(err instanceof Error ? err.message : 'An error occurred during sign up');
+    }
+  };
+
+  const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    try {
+      await signIn(email, password);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred during sign in');
     }
   };
 
@@ -38,11 +39,11 @@ const AuthForm: React.FC = () => {
         <CardTitle>{isSignUp ? 'Create Account' : 'Welcome Back'}</CardTitle>
         <CardDescription>
           {isSignUp
-            ? 'Create an account to track your disc golf achievements'
-            : 'Sign in to continue tracking your disc golf achievements'}
+            ? 'Enter your details to create your account'
+            : 'Enter your credentials to sign in'}
         </CardDescription>
       </CardHeader>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={isSignUp ? handleSignUp : handleSignIn}>
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
@@ -73,8 +74,8 @@ const AuthForm: React.FC = () => {
           )}
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
-          <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? 'Loading...' : isSignUp ? 'Sign Up' : 'Sign In'}
+          <Button type="submit" className="w-full">
+            {isSignUp ? 'Sign Up' : 'Sign In'}
           </Button>
           <Button
             type="button"
@@ -83,8 +84,8 @@ const AuthForm: React.FC = () => {
             onClick={() => setIsSignUp(!isSignUp)}
           >
             {isSignUp
-              ? 'Already have an account? Sign In'
-              : "Don't have an account? Sign Up"}
+              ? 'Already have an account? Sign in'
+              : "Don't have an account? Sign up"}
           </Button>
         </CardFooter>
       </form>

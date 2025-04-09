@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { AchievementProvider } from './context/AchievementContext';
@@ -10,50 +9,40 @@ import UserMenu from './components/UserMenu';
 import { useAuth } from './context/AuthContext';
 
 function AppContent() {
-  const { user, loading } = useAuth();
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
-      </div>
-    );
-  }
-
-  if (!user) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
-        <AuthForm />
-      </div>
-    );
-  }
+  const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">Disc Golf Skill Tree</h1>
-          <UserMenu />
+    <div className="min-h-screen bg-background">
+      <header className="border-b">
+        <div className="container flex h-16 items-center px-4">
+          <h1 className="text-xl font-bold">Disc Golf Skill Tree</h1>
+          <div className="ml-auto flex items-center space-x-4">
+            {user ? <UserMenu /> : <AuthForm />}
+          </div>
         </div>
       </header>
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <SkillBranch />
-          <CollectionBranch />
-          <SocialBranch />
-        </div>
+      <main className="container mx-auto p-4">
+        <Routes>
+          <Route path="/" element={<SkillBranch />} />
+          <Route path="/collection" element={<CollectionBranch />} />
+          <Route path="/social" element={<SocialBranch />} />
+        </Routes>
       </main>
     </div>
   );
 }
 
-export default function App() {
+function App() {
   return (
-    <AuthProvider>
-      <AchievementProvider>
-        <AppContent />
-      </AchievementProvider>
-    </AuthProvider>
+    <Router>
+      <AuthProvider>
+        <AchievementProvider>
+          <AppContent />
+        </AchievementProvider>
+      </AuthProvider>
+    </Router>
   );
 }
+
+export default App;
 
