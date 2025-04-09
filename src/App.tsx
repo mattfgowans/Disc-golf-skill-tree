@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { AchievementProvider } from './context/AchievementContext';
 import SkillBranch from './components/SkillBranch';
@@ -16,6 +16,17 @@ function AppContent() {
       <header className="border-b">
         <div className="container flex h-16 items-center px-4">
           <h1 className="text-xl font-bold">Disc Golf Skill Tree</h1>
+          <nav className="mx-6 flex space-x-4">
+            <Link to="/" className="text-sm font-medium transition-colors hover:text-primary">
+              Skills
+            </Link>
+            <Link to="/collection" className="text-sm font-medium transition-colors hover:text-primary">
+              Collection
+            </Link>
+            <Link to="/social" className="text-sm font-medium transition-colors hover:text-primary">
+              Social
+            </Link>
+          </nav>
           <div className="ml-auto flex items-center space-x-4">
             {user ? <UserMenu /> : <AuthForm />}
           </div>
