@@ -1,11 +1,13 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { AchievementProvider } from './context/AchievementContext';
-import { AuthForm } from './components/AuthForm';
-import { UserMenu } from './components/UserMenu';
+import SkillBranch from './components/SkillBranch';
+import CollectionBranch from './components/CollectionBranch';
+import SocialBranch from './components/SocialBranch';
+import AuthForm from './components/AuthForm';
+import UserMenu from './components/UserMenu';
 import { useAuth } from './context/AuthContext';
-import { SkillBranch } from './components/SkillBranch';
-import { CollectionBranch } from './components/CollectionBranch';
-import { SocialBranch } from './components/SocialBranch';
 
 function AppContent() {
   const { user, loading } = useAuth();
