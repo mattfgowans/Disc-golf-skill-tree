@@ -5,7 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Disc-golf-skill-tree/',
+  base: process.env.NODE_ENV === 'production' ? '/Disc-golf-skill-tree/' : '/',
   server: {
     host: true, // This makes the server accessible on your local network
     port: 3000
@@ -21,5 +21,10 @@ export default defineConfig({
       '@/data': path.resolve(__dirname, './src/data'),
       '@/assets': path.resolve(__dirname, './src/assets'),
     },
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true
   }
 })

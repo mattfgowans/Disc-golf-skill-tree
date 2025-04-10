@@ -4,14 +4,7 @@ import { supabase } from '../lib/supabase';
 import { skillAchievements } from '../data/skillAchievements';
 import { collectionAchievements } from '../data/collectionAchievements';
 import { socialAchievements } from '../data/socialAchievements';
-
-export type Achievement = {
-  id: string;
-  title: string;
-  description: string;
-  isUnlocked: boolean;
-  patchAvailable: boolean;
-};
+import { Achievement } from '../types/types';
 
 type AchievementContextType = {
   achievements: Achievement[];

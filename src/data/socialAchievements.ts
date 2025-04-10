@@ -1,4 +1,4 @@
-import { Achievement } from '../context/AchievementContext';
+import { Achievement } from '../types/types';
 
 export const socialAchievements: Achievement[] = [
   // Community Engagement
