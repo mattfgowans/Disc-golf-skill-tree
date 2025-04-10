@@ -1,0 +1,3 @@
+// Environment variables with fallbacks for production
+export const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://qvctlruqcgqounqxurfg.supabase.co';
+export const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2Y3RscnVxY2dxb3VucXh1cmZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyMzUyMjAsImV4cCI6MjA1OTgxMTIyMH0.uiUN6Gzwcxy9gJZ-W3dUtnibZjcAuWfp1RXNuRJJJYc'; 
