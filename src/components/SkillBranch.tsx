@@ -1,6 +1,6 @@
 import React from 'react';
-import { Achievement } from '../types/types';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Achievement } from '@/types/types';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
@@ -286,118 +286,163 @@ const skillAchievements: Achievement[] = [
 
 const SkillBranch: React.FC = () => {
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>Skill Branch</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-6">
-        {/* Basic Skills Section */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Basic Skills</h3>
-          {skillAchievements.slice(0, 9).map((achievement) => (
-            <div key={achievement.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors">
-              <div>
-                <h4 className="font-medium">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground">{achievement.description}</p>
-              </div>
-              <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
-                {achievement.isUnlocked ? "Unlocked" : "Locked"}
-              </Badge>
+    <div className="container mx-auto p-6 max-w-4xl">
+      <Card className="bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl">
+        <CardHeader className="space-y-2">
+          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Skill Branch</CardTitle>
+          <CardDescription className="text-slate-300">Master the fundamental skills of disc golf and track your progress</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-8">
+          {/* Basic Skills Section */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-blue-400">Basic Skills</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              {skillAchievements.slice(0, 9).map((achievement) => (
+                <div
+                  key={achievement.id}
+                  className="group relative overflow-hidden rounded-lg border border-slate-700 bg-slate-800/50 p-4 transition-all hover:border-blue-500/50 hover:bg-slate-800/80"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-semibold text-blue-300 group-hover:text-blue-400">{achievement.title}</h4>
+                      <Badge variant={achievement.isUnlocked ? "default" : "secondary"} className="transition-all">
+                        {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-slate-400 group-hover:text-slate-300">{achievement.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        <Separator />
+          <Separator className="bg-slate-700" />
 
-        {/* Putting Mastery Section */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Putting Mastery</h3>
-          {skillAchievements.slice(9, 17).map((achievement) => (
-            <div key={achievement.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors">
-              <div>
-                <h4 className="font-medium">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground">{achievement.description}</p>
-              </div>
-              <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
-                {achievement.isUnlocked ? "Unlocked" : "Locked"}
-              </Badge>
+          {/* Putting Mastery Section */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-blue-400">Putting Mastery</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              {skillAchievements.slice(9, 17).map((achievement) => (
+                <div
+                  key={achievement.id}
+                  className="group relative overflow-hidden rounded-lg border border-slate-700 bg-slate-800/50 p-4 transition-all hover:border-blue-500/50 hover:bg-slate-800/80"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-semibold text-blue-300 group-hover:text-blue-400">{achievement.title}</h4>
+                      <Badge variant={achievement.isUnlocked ? "default" : "secondary"} className="transition-all">
+                        {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-slate-400 group-hover:text-slate-300">{achievement.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        <Separator />
+          <Separator className="bg-slate-700" />
 
-        {/* Advanced Techniques Section */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Advanced Techniques</h3>
-          {skillAchievements.slice(17, 26).map((achievement) => (
-            <div key={achievement.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors">
-              <div>
-                <h4 className="font-medium">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground">{achievement.description}</p>
-              </div>
-              <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
-                {achievement.isUnlocked ? "Unlocked" : "Locked"}
-              </Badge>
+          {/* Advanced Techniques Section */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-blue-400">Advanced Techniques</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              {skillAchievements.slice(17, 26).map((achievement) => (
+                <div
+                  key={achievement.id}
+                  className="group relative overflow-hidden rounded-lg border border-slate-700 bg-slate-800/50 p-4 transition-all hover:border-blue-500/50 hover:bg-slate-800/80"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-semibold text-blue-300 group-hover:text-blue-400">{achievement.title}</h4>
+                      <Badge variant={achievement.isUnlocked ? "default" : "secondary"} className="transition-all">
+                        {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-slate-400 group-hover:text-slate-300">{achievement.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        <Separator />
+          <Separator className="bg-slate-700" />
 
-        {/* Distance Milestones Section */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Distance Milestones</h3>
-          {skillAchievements.slice(26, 30).map((achievement) => (
-            <div key={achievement.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors">
-              <div>
-                <h4 className="font-medium">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground">{achievement.description}</p>
-              </div>
-              <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
-                {achievement.isUnlocked ? "Unlocked" : "Locked"}
-              </Badge>
+          {/* Distance Milestones Section */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-blue-400">Distance Milestones</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              {skillAchievements.slice(26, 30).map((achievement) => (
+                <div
+                  key={achievement.id}
+                  className="group relative overflow-hidden rounded-lg border border-slate-700 bg-slate-800/50 p-4 transition-all hover:border-blue-500/50 hover:bg-slate-800/80"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-semibold text-blue-300 group-hover:text-blue-400">{achievement.title}</h4>
+                      <Badge variant={achievement.isUnlocked ? "default" : "secondary"} className="transition-all">
+                        {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-slate-400 group-hover:text-slate-300">{achievement.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        <Separator />
+          <Separator className="bg-slate-700" />
 
-        {/* Fun Skill Achievements Section */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Fun Skill Achievements</h3>
-          {skillAchievements.slice(30, 33).map((achievement) => (
-            <div key={achievement.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors">
-              <div>
-                <h4 className="font-medium">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground">{achievement.description}</p>
-              </div>
-              <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
-                {achievement.isUnlocked ? "Unlocked" : "Locked"}
-              </Badge>
+          {/* Fun Skill Achievements Section */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-blue-400">Fun Skill Achievements</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              {skillAchievements.slice(30, 33).map((achievement) => (
+                <div
+                  key={achievement.id}
+                  className="group relative overflow-hidden rounded-lg border border-slate-700 bg-slate-800/50 p-4 transition-all hover:border-blue-500/50 hover:bg-slate-800/80"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-semibold text-blue-300 group-hover:text-blue-400">{achievement.title}</h4>
+                      <Badge variant={achievement.isUnlocked ? "default" : "secondary"} className="transition-all">
+                        {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-slate-400 group-hover:text-slate-300">{achievement.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        <Separator />
+          <Separator className="bg-slate-700" />
 
-        {/* Professional Level Section */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Professional Level</h3>
-          {skillAchievements.slice(33, 38).map((achievement) => (
-            <div key={achievement.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors">
-              <div>
-                <h4 className="font-medium">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground">{achievement.description}</p>
-              </div>
-              <Badge variant={achievement.isUnlocked ? "default" : "secondary"}>
-                {achievement.isUnlocked ? "Unlocked" : "Locked"}
-              </Badge>
+          {/* Professional Level Section */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-blue-400">Professional Level</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              {skillAchievements.slice(33, 38).map((achievement) => (
+                <div
+                  key={achievement.id}
+                  className="group relative overflow-hidden rounded-lg border border-slate-700 bg-slate-800/50 p-4 transition-all hover:border-blue-500/50 hover:bg-slate-800/80"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-semibold text-blue-300 group-hover:text-blue-400">{achievement.title}</h4>
+                      <Badge variant={achievement.isUnlocked ? "default" : "secondary"} className="transition-all">
+                        {achievement.isUnlocked ? "Unlocked" : "Locked"}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-slate-400 group-hover:text-slate-300">{achievement.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 
