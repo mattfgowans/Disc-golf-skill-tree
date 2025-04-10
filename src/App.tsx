@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { AchievementProvider } from './context/AchievementContext';
 import SkillBranch from './components/SkillBranch';
@@ -10,20 +10,42 @@ import { useAuth } from './context/AuthContext';
 
 function AppContent() {
   const { user } = useAuth();
+  const location = useLocation();
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b">
+      <header className="border-b bg-white shadow-sm">
         <div className="container flex h-16 items-center px-4">
-          <h1 className="text-xl font-bold">Disc Golf Skill Tree</h1>
-          <nav className="mx-6 flex space-x-4">
-            <Link to="/" className="text-sm font-medium transition-colors hover:text-primary">
+          <h1 className="text-xl font-bold text-blue-600">Disc Golf Skill Tree</h1>
+          <nav className="mx-6 flex space-x-1">
+            <Link 
+              to="/" 
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                location.pathname === '/' 
+                  ? 'bg-blue-100 text-blue-700' 
+                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+              }`}
+            >
               Skills
             </Link>
-            <Link to="/collection" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link 
+              to="/collection" 
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                location.pathname === '/collection' 
+                  ? 'bg-blue-100 text-blue-700' 
+                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+              }`}
+            >
               Collection
             </Link>
-            <Link to="/social" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link 
+              to="/social" 
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                location.pathname === '/social' 
+                  ? 'bg-blue-100 text-blue-700' 
+                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+              }`}
+            >
               Social
             </Link>
           </nav>
