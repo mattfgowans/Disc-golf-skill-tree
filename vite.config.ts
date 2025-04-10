@@ -26,16 +26,22 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true,
-    modulePreload: {
-      polyfill: true
-    },
+    target: 'esnext',
+    minify: 'esbuild',
     rollupOptions: {
       output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['@radix-ui/react-dropdown-menu', '@radix-ui/react-slot']
+        },
         format: 'es',
-        entryFileNames: `assets/[name].[hash].mjs`,
-        chunkFileNames: `assets/[name].[hash].mjs`,
-        assetFileNames: `assets/[name].[hash].[ext]`
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom']
   }
 })
